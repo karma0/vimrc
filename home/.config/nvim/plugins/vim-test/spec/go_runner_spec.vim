@@ -1,0 +1,1 @@
+/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/vim-test/spec/go_runner_spec.vim

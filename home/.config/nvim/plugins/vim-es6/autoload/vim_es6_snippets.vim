@@ -1,0 +1,1 @@
+/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/vim-es6/autoload/vim_es6_snippets.vim

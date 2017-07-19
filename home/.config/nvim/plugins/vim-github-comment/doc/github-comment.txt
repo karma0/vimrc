@@ -1,0 +1,53 @@
+*github-comment* Vimscript for commenting on GitHub from Vim
+
+Usage                                          |github-comment-usage|
+Install                                        |github-comment-install|
+Requirements                                   |github-comment-requirements|
+Setup                                          |github-comment-setup|
+
+This is a vimscript to comment commits on GitHub using Vim.
+
+For the latest version please see
+https://github.com/mmozuras/vim-github-comment.
+
+==============================================================================
+USAGE                                                 *:GHComment* *github-comment-usage*
+
+- Write a comment for the current line. >
+
+    :GHComment <your-comment-here>
+<
+==============================================================================
+INSTALL                                                     *github-comment-install*
+
+Copy following files into your plugin directory.
+
+rtp:
+  - plugin/github-comment.vim
+
+You can also use other ways of installation.
+
+You need to install webapi-vim also:
+
+  https://github.com/mattn/webapi-vim
+
+==============================================================================
+REQUIREMENTS                                           *github-comment-requirements*
+
+  - git command-line client
+  - curl command (http://curl.haxx.se/)
+  - webapi-vim (https://github.com/mattn/webapi-vim)
+
+==============================================================================
+SETUP                                                       *github-comment-setup*
+
+If you don't have `github.user` set in your `.gitconfig`, add the following
+into your ~/.vimrc
+>
+    let g:github_user = '<your-github-username-here>'
+<
+
+Optionally, browser can be opened with your comment after you post it
+>
+    let g:github_comment_open_browser = 1
+<
