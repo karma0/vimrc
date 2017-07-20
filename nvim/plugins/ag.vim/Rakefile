@@ -1,1 +1,3 @@
-/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/ag.vim/Rakefile
+task :tgz do
+  sh 'cd ..; tar czvf ag/ag-vim.tgz ag/{plugin,autoload,doc}'
+end

@@ -1,1 +1,0 @@
-/home/karma0/.homesick/repos/vimrc/home/.config/nvim/vimrc/README.markdown

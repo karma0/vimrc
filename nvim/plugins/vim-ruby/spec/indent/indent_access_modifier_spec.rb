@@ -1,1 +1,0 @@
-/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/vim-ruby/spec/indent/indent_access_modifier_spec.rb

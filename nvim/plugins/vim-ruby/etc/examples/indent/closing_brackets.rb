@@ -1,1 +1,0 @@
-/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/vim-ruby/etc/examples/indent/closing_brackets.rb

@@ -1,1 +1,14 @@
-/home/karma0/.homesick/repos/vimrc/home/.config/nvim/plugins/vim-node/test/vimrc
+set nocompatible
+set noswapfile
+set nobackup
+set hidden
+
+set runtimepath-=~/.vim
+set runtimepath-=~/.vim/after
+let &runtimepath = expand("<sfile>:p:h:h") . "," . &runtimepath
+
+filetype plugin indent on
+syntax on
+
+set columns=80 lines=24
+winpos 1337 0
