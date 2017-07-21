@@ -1,0 +1,1 @@
+setfiletype notes.txtfmt
