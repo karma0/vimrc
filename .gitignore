@@ -1,9 +1,11 @@
 home/.nvim/options.local.vim
 home/.nvimrc.local
 home/.nvim/dict.custom.utf8-8.add.spl
-home/.nvim/undo*
+nvim/undo*
+
 *.swp
 # Created by https://www.gitignore.io/api/vim
+*.log
 
 ### Vim ###
 [._]*.s[a-w][a-z]
@@ -18,3 +20,5 @@ Session.vim
 *.bak
 
 .ropeproject/*
+jal*
+
