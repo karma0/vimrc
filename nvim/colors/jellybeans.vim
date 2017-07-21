@@ -65,7 +65,7 @@ endif
 
 let colors_name = "jellybeans"
 
-if has("gui_running") || (has('termguicolors') && &termguicolors) || &t_Co >= 88
+if has("gui_running") || &t_Co == 88 || &t_Co == 256
   let s:low_color = 0
 else
   let s:low_color = 1
@@ -115,25 +115,6 @@ if !exists("g:jellybeans_use_lowcolor_black") || g:jellybeans_use_lowcolor_black
   let s:termBlack = "Black"
 else
   let s:termBlack = "Grey"
-endif
-
-" When `termguicolors` is set, Vim[^1] ignores `guibg=NONE` after
-" `guibg` is already set to a color. See:
-"
-" - https://github.com/vim/vim/issues/981
-" - https://github.com/nanotech/jellybeans.vim/issues/64
-"
-" To work around this, ensure we don't set the default background
-" color before an override changes it to `NONE` by ensuring that the
-" background color isn't set to a value different from its override.
-"
-" [^1]: Tested on 8.0.567. Does not apply to Neovim.
-"
-" TODO: Enable this behavior for all highlights by applying
-"       overrides before calling highlight commands.
-"
-if has_key(s:overrides, "background") && has_key(s:overrides["background"], "guibg")
-    let s:background_color = s:overrides["background"]["guibg"]
 endif
 
 " Color approximation functions by Henry So, Jr. and David Liang {{{
@@ -293,7 +274,7 @@ endfun
 fun! s:color(r, g, b)
   " map greys directly (see xterm's 256colres.pl)
   if &t_Co == 256 && a:r == a:g && a:g == a:b && a:r > 3 && a:r < 243
-    return (a:r - 8) / 10 + 232
+    return float2nr(round(a:r - 8) / 10.0) + 232
   endif
 
   " get the closest grey

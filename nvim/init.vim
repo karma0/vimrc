@@ -22,16 +22,11 @@ set t_Co=256
 "if has('termguicolors')
 "  set termguicolors
 "endif
-"colorscheme ayu
-let g:srcery_inverse = 0
+
 let mapleader = ","
 let maplocalleader = ",,"
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Quote this word
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 " {{{ Options
 

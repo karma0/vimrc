@@ -66,6 +66,13 @@ func! karma0#plugins#configure() abort
 
   let g:fzf_command_prefix = 'Fzf'
 
+  let g:jellybeans_use_term_italics = 1
+  let g:jellybeans_overrides = {
+        \ 'background': {
+        \   'ctermbg': 'none',
+        \   '256ctermbg': 'none'
+        \ }}
+
   " {{{ airline
   let g:airline#extensions#hunks#non_zero_only = 1
   let g:airline#extensions#tabline#enabled = 1
@@ -107,8 +114,8 @@ func! karma0#plugins#configure() abort
   " }}}
 
   " {{{ License stuff
-  let g:licenses_copyright_holders_name = 'Jacky Alciné <yo@jacky.wtf>'
-  let g:licenses_authors_name = 'Jacky Alciné'
+  let g:licenses_copyright_holders_name = 'Bobby Larson <karma0@gmail.com>'
+  let g:licenses_authors_name = 'Bobby Larson'
   let g:licenses_default_commands = ['agpl', 'mit', 'apache']
   " }}}
 
@@ -116,12 +123,11 @@ func! karma0#plugins#configure() abort
   let g:vim_markdown_frontmatter = 1
 
   " {{{ ultisnips
-  let g:snips_author = 'Jacky Alciné <yo@jacky.wtf>'
+  let g:snips_author = 'Bobby Larson <karma0@gmail.com>'
   let g:UltiSnipsEnableSnipMate = 1
   let g:UltiSnipsEditSplit = 'context'
   let g:UltiSnipsSnippetDirectories = [$HOME. '/.config/nvim/snippets']
   let g:UltiSnipsExpandTrigger = '<c-j>'
-
   " }}}
 
   " {{{ vim-bookmarks
@@ -147,6 +153,7 @@ func! karma0#plugins#configure() abort
   let g:ag_highlight = 1
   " }}}
 
+  " {{{ neomake
   let g:neomake_list_height = 5
   let g:neomake_open_list = 2
   let g:neomake_serialize = 0
@@ -161,6 +168,7 @@ func! karma0#plugins#configure() abort
   let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
   let g:neomake_vim_enabled_makers = ['vint']
   let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+  " }}}
 
   let g:session_autosave = 'yes'
   let g:startify_files_number = 10
@@ -239,120 +247,119 @@ func! karma0#plugins#define() abort
   call g:plug#begin(g:karma0.plugins.dir)
 
   " {{{ External support
-  "Plug 'KabbAmine/zeavim.vim'
+  Plug 'KabbAmine/zeavim.vim'
   "Plug 'guns/xterm-color-table.vim'
   Plug 'ayu-theme/ayu-vim' ", { 'branch': '2813db6' }
-  "Plug 'tmux-plugins/vim-tmux'
-  "      \ | Plug 'tmux-plugins/vim-tmux-focus-events'
-  "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  "      \ | Plug 'junegunn/fzf.vim'
-  "Plug 'metakirby5/codi.vim'
-  "Plug 'mattn/calendar-vim'
-  "Plug 'rking/ag.vim'
-  "Plug 'ryanoasis/vim-devicons'
-  "Plug 'tpope/vim-abolish'
-  "Plug 'tpope/vim-dispatch'
-  "Plug 'tpope/vim-dotenv'
-  "Plug 'tpope/vim-obsession'
-  "Plug 'tpope/vim-rsi'
-  "      \ | Plug 'vim-utils/vim-husk'
-  "Plug 'tpope/vim-speeddating'
-  "Plug 'tpope/vim-surround'
-  "Plug 'tpope/vim-vinegar'
+  Plug 'tmux-plugins/vim-tmux'
+        \ | Plug 'tmux-plugins/vim-tmux-focus-events'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        \ | Plug 'junegunn/fzf.vim'
+  Plug 'metakirby5/codi.vim'
+  Plug 'mattn/calendar-vim'
+  Plug 'rking/ag.vim'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-dotenv'
+  Plug 'tpope/vim-obsession'
+  Plug 'tpope/vim-rsi'
+        \ | Plug 'vim-utils/vim-husk'
+  Plug 'tpope/vim-speeddating'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-vinegar'
   " }}}
   " {{{ Language Support
-  "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-  "      \ | Plug 'roxma/nvim-cm-racer'
-  "      \ | Plug 'Shougo/neco-vim'
-  "Plug 'roxma/nvim-completion-manager'
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+        \ | Plug 'roxma/nvim-cm-racer'
+        \ | Plug 'Shougo/neco-vim'
+  Plug 'roxma/nvim-completion-manager'
   " }}}
   " {{{ Editor Enhancement
-  "Plug 'sbdchd/neoformat'
-  "Plug 'scrooloose/nerdcommenter'
-  "Plug 'itchyny/vim-cursorword'
-  "Plug 'yuttie/comfortable-motion.vim'
-  "Plug 'antoyo/vim-licenses'
+  Plug 'sbdchd/neoformat'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'itchyny/vim-cursorword'
+  Plug 'yuttie/comfortable-motion.vim'
+  Plug 'antoyo/vim-licenses'
   Plug 'vim-airline/vim-airline'
         \ | Plug 'vim-airline/vim-airline-themes'
-  "Plug 'vim-scripts/SyntaxRange'
-  "Plug 'vim-scripts/utl.vim'
-  "Plug 'vim-utils/vim-interruptless'
-  "Plug 'tpope/vim-repeat'
-  "Plug 'tpope/vim-endwise'
-  "Plug 'Konfekt/FastFold'
-  "Plug 'bogado/file-line'
-  "Plug 'Shougo/echodoc.vim'
-  "Plug 'SirVer/ultisnips'
-  "Plug 'abudden/taghighlight-automirror'
-  "Plug 'benekastah/neomake'
-  "Plug 'janko-m/vim-test'
-  "Plug 'henrik/vim-indexed-search'
-  "Plug 'godlygeek/tabular'
-  "Plug 'kopischke/vim-stay'
-  "Plug 'jamessan/vim-gnupg'
-  "Plug 'junegunn/goyo.vim'
-  "Plug 'junegunn/limelight.vim'
-  "Plug 'junegunn/vim-easy-align'
-  "Plug 'mhinz/vim-startify'
-  "Plug 'mhinz/vim-signify'
-  "Plug 'machakann/vim-highlightedyank'
-  "Plug 'nathanaelkane/vim-indent-guides'
-  "Plug 'radenling/vim-dispatch-neovim'
-  "Plug 'xolox/vim-easytags'
-  "Plug 'xolox/vim-misc'
-  "Plug 'xolox/vim-notes'
-  "Plug 'xolox/vim-session'
-  "Plug 'xolox/vim-shell'
-  "Plug 'terryma/vim-multiple-cursors'
+  Plug 'vim-scripts/SyntaxRange'
+  Plug 'vim-scripts/utl.vim'
+  Plug 'vim-utils/vim-interruptless'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-endwise'
+  Plug 'Konfekt/FastFold'
+  Plug 'bogado/file-line'
+  Plug 'Shougo/echodoc.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'abudden/taghighlight-automirror'
+  Plug 'benekastah/neomake'
+  Plug 'janko-m/vim-test'
+  Plug 'henrik/vim-indexed-search'
+  Plug 'godlygeek/tabular'
+  Plug 'kopischke/vim-stay'
+  Plug 'jamessan/vim-gnupg'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'mhinz/vim-startify'
+  Plug 'mhinz/vim-signify'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'radenling/vim-dispatch-neovim'
+  Plug 'xolox/vim-easytags'
+  Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-notes'
+  Plug 'xolox/vim-session'
+  Plug 'xolox/vim-shell'
+  Plug 'terryma/vim-multiple-cursors'
   " }}}
   " {{{ Language Support
-  "Plug 'sheerun/vim-polyglot' " General language support.
-  "Plug 'lervag/vimtex', { 'for': 'latex,tex' }
-  "Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
-  "Plug 'bpstahlman/txtfmt', { 'for': 'text.fmt' }
-  "Plug 'fatih/vim-go', { 'for': 'go' }
-  "Plug 'hashivim/vim-terraform'
-  "Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
-  "Plug 'jceb/vim-orgmode'
-  "Plug 'lambdalisue/vim-pyenv', { 'for': 'python' }
-  "      \ | Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
-  "      \ | Plug 'fisadev/vim-isort', { 'for': 'python' }
-  "      \ | Plug 'python-rope/ropevim', { 'for': 'python' }
-  "Plug 'kana/vim-textobj-user'
-  "Plug 'tpope/vim-scriptease'
-  "Plug 'reedes/vim-litecorrect'
-  "Plug 'reedes/vim-pencil'
-  "Plug 'kana/vim-textobj-user'
-  "      \ | Plug 'reedes/vim-textobj-quote'
-  "      \ | Plug 'reedes/vim-textobj-sentence'
-  "Plug 'reedes/vim-wordy'
-  "Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-  "Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-  "Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+  Plug 'sheerun/vim-polyglot' " General language support.
+  Plug 'lervag/vimtex', { 'for': 'latex,tex' }
+  Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+  Plug 'bpstahlman/txtfmt', { 'for': 'text.fmt' }
+  Plug 'fatih/vim-go', { 'for': 'go' }
+  Plug 'hashivim/vim-terraform'
+  Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
+  Plug 'jceb/vim-orgmode'
+  Plug 'lambdalisue/vim-pyenv', { 'for': 'python' }
+        \ | Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+        \ | Plug 'fisadev/vim-isort', { 'for': 'python' }
+        \ | Plug 'python-rope/ropevim', { 'for': 'python' }
+  Plug 'tpope/vim-scriptease'
+  Plug 'reedes/vim-litecorrect'
+  Plug 'reedes/vim-pencil'
+  Plug 'kana/vim-textobj-user'
+        \ | Plug 'reedes/vim-textobj-quote'
+        \ | Plug 'reedes/vim-textobj-sentence'
+  Plug 'reedes/vim-wordy'
+  Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+  Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+  Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
   "Plug 'vimperator/vimperator.vim'
-  "Plug 'saltstack/salt-vim'
+  Plug 'saltstack/salt-vim'
   " }}}
   " {{{ Project Support
-  "Plug 'mattesgroeger/vim-bookmarks'
-  "Plug 'tpope/vim-fugitive'
-  "      \ | Plug 'tommcdo/vim-fugitive-blame-ext'
-  "      \ | Plug 'tpope/vim-rhubarb'
-  "Plug 'direnv/direnv.vim'
-  "Plug 'editorconfig/editorconfig-vim'
-  "Plug 'embear/vim-localvimrc'
-  "Plug 'airblade/vim-rooter'
-  "Plug 'honza/vim-snippets'
-  "Plug 'idanarye/vim-merginal'
-  "Plug 'scrooloose/nerdtree'
-  "      \ | Plug 'jistr/vim-nerdtree-tabs'
-  "      \ | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  "      \ | Plug 'xuyuanp/nerdtree-git-plugin'
-  "      \ | Plug 'low-ghost/nerdtree-fugitive'
-  "Plug 'majutsushi/tagbar'
-  "Plug 'jreybert/vimagit'
-  "Plug 'mattn/webapi-vim'
-  "      \ | Plug 'mattn/gist-vim', { 'on': 'Gist' }
-  "Plug 'renyard/vim-git-flow-format'
+  Plug 'mattesgroeger/vim-bookmarks'
+  Plug 'tpope/vim-fugitive'
+        \ | Plug 'tommcdo/vim-fugitive-blame-ext'
+        \ | Plug 'tpope/vim-rhubarb'
+        \ | Plug 'idanarye/vim-merginal'
+  Plug 'direnv/direnv.vim'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'embear/vim-localvimrc'
+  Plug 'airblade/vim-rooter'
+  Plug 'honza/vim-snippets'
+  Plug 'scrooloose/nerdtree'
+        \ | Plug 'jistr/vim-nerdtree-tabs'
+        \ | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+        \ | Plug 'xuyuanp/nerdtree-git-plugin'
+        \ | Plug 'low-ghost/nerdtree-fugitive'
+  Plug 'majutsushi/tagbar'
+  Plug 'jreybert/vimagit'
+  Plug 'mattn/webapi-vim'
+        \ | Plug 'mattn/gist-vim', { 'on': 'Gist' }
+  Plug 'renyard/vim-git-flow-format'
   " }}}
 
   call g:plug#end()

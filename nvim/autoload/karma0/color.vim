@@ -2,10 +2,6 @@ func! karma0#color#tweak() abort
   call karma0#color#modify_highlighting()
 
   let g:nord_terminal_italics = 1
-  let g:jellybeans_use_term_italics = 1
-  let g:jellybeans_overrides = {
-  \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-  \}
 endfunc
 
 func! karma0#color#modify_highlighting() abort

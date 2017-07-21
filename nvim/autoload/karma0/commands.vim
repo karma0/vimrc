@@ -1,5 +1,5 @@
 " File: grouped_actions.vim
-" Author: Jacky Alciné <yo@jacky.wtf>
+" Author: Bobby Larson <karma0@gmail.com>
 " Description: Some actions I like to have.
 " Last Modified: February 11, 2017
 
