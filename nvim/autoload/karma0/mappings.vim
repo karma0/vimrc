@@ -119,7 +119,6 @@ func! karma0#mappings#setup() abort
   nnoremap <silent> [git]a   :Git add<space>
   nnoremap <silent> [git]ab  :Git add %<cr>
   nnoremap <silent> [git]b   :Gbrowse<CR>
-  vnoremap <silent> [git]b   :Gbrowse<CR>
   nnoremap <silent> [git]c   :Git commit<space>
   nnoremap <silent> [git]C   :Gcommit --branch --verbose %<CR>
   nnoremap <silent> [git]co  :Git checkout<space>
@@ -173,22 +172,26 @@ func! karma0#mappings#setup() abort
   " }}}
 
   " {{{ Workman
+  " (O)pen line -> (L)ine
   nnoremap l o
   nnoremap o l
   nnoremap L O
   nnoremap O L
+  " Search (N)ext -> (J)ump
   nnoremap j n
   nnoremap n j
   nnoremap J N
   nnoremap N J
   nnoremap gn gj
   nnoremap gj gn
+  " (E)nd of word -> brea(K) of word
   nnoremap k e
   nnoremap e k
   nnoremap K E
   nnoremap E <nop>
   nnoremap gk ge
   nnoremap ge gk
+  " (Y)ank -> (H)aul
   nnoremap h y
   onoremap h y
   nnoremap y h
