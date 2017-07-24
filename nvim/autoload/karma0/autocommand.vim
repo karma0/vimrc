@@ -12,8 +12,8 @@ func! karma0#autocommand#apply() abort
     endif
 
     " Funky files.
-    "au User YouCompleteMe call youcompleteme#Enable()
-    "au User Startified setlocal buftype=nofile
+    au User YouCompleteMe call youcompleteme#Enable()
+    au User Startified setlocal buftype=nofile
 
     " Reload tmux files when we edit them.
     au BufWritePost *tmux*.conf  call karma0#tweaks#reload_tmux()
@@ -24,7 +24,7 @@ func! karma0#autocommand#apply() abort
     au FileType gitcommit setl spell
 
     " Enable Neomake to run on builds.
-    "au BufWritePost * Neomake
+    au BufWritePost * Neomake
 
     " Clear Fugitive buffers.
     au BufReadPost fugitive://* set bufhidden=delete

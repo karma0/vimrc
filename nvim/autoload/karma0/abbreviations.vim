@@ -1,5 +1,5 @@
 " File: autoload/karma0/abbreviations.vim
-" Description: Things I like to mess up or shorten.
+" Description: Things likely to get messed up or need shortening.
 
 scriptencoding utf-8
 

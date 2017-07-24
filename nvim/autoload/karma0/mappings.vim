@@ -1,13 +1,13 @@
 func! karma0#mappings#setup() abort
   " {{{ Leaders and Accessibility
-  " PASTE mo'fo!
+  " PASTE
   set pastetoggle=<F2>
 
   " Set my leader to the comma key.
   let g:mapleader=','
 
   " Set buffer-local mappings to the key above <Enter>
-  let g:maplocalleader='\\'
+  let g:maplocalleader=',,'
 
   " One less hit to get to the command-line.
   nnoremap ; :
@@ -214,5 +214,5 @@ func! karma0#mappings#setup() abort
 
   " Open a new tab for projects.
   nnoremap [karma0] <nop>
-  nmap <leader>J [karma0]
+  nmap <leader>K [karma0]
 endfunc

@@ -1,11 +1,9 @@
-" File: grouped_actions.vim
 " Author: Bobby Larson <karma0@gmail.com>
-" Description: Some actions I like to have.
-" Last Modified: February 11, 2017
+" Description: Some actions
 
 " Function: write_in_today
-" This wraps the act of me writing in my daily journal.
-" TODO: Somehow ensure some short of encryption?
+" This wraps writing in a daily journal.
+" TODO: Somehow ensure some sort of encryption?
 " TODO: Randomly inject a prompt?
 
 scriptencoding utf-8

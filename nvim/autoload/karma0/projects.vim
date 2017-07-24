@@ -1,8 +1,6 @@
-" File: karma0/projects.vim
 " Description: Make working with projects easier.
 "
-" The goal of this is to encapsulate some repetitive actions I take when I'm
-" working on code.
+" The goal of this is to encapsulate some repetitive actions.
 "
 " TODO: Write out a way to open up a new project in a tab.
 
