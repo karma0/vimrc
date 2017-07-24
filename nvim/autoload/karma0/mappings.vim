@@ -172,6 +172,30 @@ func! karma0#mappings#setup() abort
   nnoremap <A-l> <C-w>l
   " }}}
 
+  " {{{ Workman
+  nnoremap l o
+  nnoremap o l
+  nnoremap L O
+  nnoremap O L
+  nnoremap j n
+  nnoremap n j
+  nnoremap J N
+  nnoremap N J
+  nnoremap gn gj
+  nnoremap gj gn
+  nnoremap k e
+  nnoremap e k
+  nnoremap K E
+  nnoremap E <nop>
+  nnoremap gk ge
+  nnoremap ge gk
+  nnoremap h y
+  onoremap h y
+  nnoremap y h
+  nnoremap H Y
+  nnoremap Y H
+  " }}}
+
   " Toggle the visibilty of non-text characters and conceals.
   nnoremap <silent> <leader>k :call <SID>toggle_visibility()<cr>
 

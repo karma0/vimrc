@@ -6,8 +6,8 @@ let g:karma0 = {
       \   'lock': '${HOME}/.config/nvim/locked-plugin-list.vim'
       \ },
       \ 'color': {
-      \   'scheme': 'jellybeans',
-      \   'airline_theme': 'jellybeans',
+      \   'scheme': 'ayu',
+      \   'airline_theme': 'ubaryd',
       \   'background': 'dark'
       \ }
       \ }
@@ -269,7 +269,7 @@ func! karma0#plugins#define() abort
   Plug 'tpope/vim-vinegar'
   " }}}
   " {{{ Language Support
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim' , { 'do': ':UpdateRemotePlugins' }
         \ | Plug 'roxma/nvim-cm-racer'
         \ | Plug 'Shougo/neco-vim'
   Plug 'roxma/nvim-completion-manager'
@@ -379,7 +379,7 @@ endfunc
 
 func! karma0#plugins#setup() abort
   call karma0#plugins#configure()
-  call karma0#plugins#update_python()
+  "call karma0#plugins#update_python()
   call karma0#plugins#define()
   call karma0#plugins#combind()
   filetype plugin indent on
@@ -406,7 +406,6 @@ endfunc
 
 func! karma0#plugins#update_python() abort
   " TODO: Convert the setting of these values into a method.
-
 
   " Switch the internal provider versions that we'll want to use for Python.
   let g:python_host_prog=substitute(system('PYENV_VERSION=neovim-py2 pyenv which python2'), '^\n*\(.\{-}\)\n*$', '\1', '')")

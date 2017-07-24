@@ -98,13 +98,13 @@ endfunc
 
 func! s:karma0_neovim_setup() abort
   let l:order = [
+        \ 'abbreviations',
         \ 'plugins',
+        \ 'config',
+        \ 'mappings',
+        \ 'commands',
         \ 'color',
         \ ]
-        "\ 'abbreviations',
-        "\ 'config',
-        "\ 'mappings',
-        "\ 'commands',
 
   for l:plugin_name in l:order
     exec('call karma0#' . l:plugin_name . '#setup()')
