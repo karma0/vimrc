@@ -27,8 +27,8 @@ func! karma0#autocommand#apply() abort
     "au BufWritePost * Neomake
 
     " Clear Fugitive buffers.
-    "au BufReadPost fugitive://* set bufhidden=delete
-    "au BufRead COMMIT_EDITMSG execute "normal! gg" | execute "normal! O" | startinsert
+    au BufReadPost fugitive://* set bufhidden=delete
+    au BufRead COMMIT_EDITMSG execute "normal! gg" | execute "normal! O" | startinsert
 
     au BufEnter * let &titlestring=expand('%:p')
 
@@ -41,54 +41,54 @@ func! karma0#autocommand#apply() abort
     au User RooterChDir call <SID>update_directory() 
   augroup END
 
-  "augroup karma0_goyo
-  "  au User GoyoEnter nested call karma0#tweaks#goyo_enter()
-  "  au User GoyoLeave nested call karma0#tweaks#goyo_leave()
-  "augroup END
+  augroup karma0_goyo
+    au User GoyoEnter nested call karma0#tweaks#goyo_enter()
+    au User GoyoLeave nested call karma0#tweaks#goyo_leave()
+  augroup END
 
-  "augroup textobj_quote
-  "  au!
-  "  autocmd FileType markdown call textobj#quote#init()
-  "  autocmd FileType notes    call textobj#quote#init()
-  "  autocmd FileType help     call textobj#quote#init()
-  "  autocmd FileType text     call textobj#quote#init()
-  "augroup END
+  augroup textobj_quote
+    au!
+    autocmd FileType markdown call textobj#quote#init()
+    autocmd FileType notes    call textobj#quote#init()
+    autocmd FileType help     call textobj#quote#init()
+    autocmd FileType text     call textobj#quote#init()
+  augroup END
 
-  "augroup textobj_sentence
-  "  au!
-  "  autocmd FileType markdown call textobj#sentence#init()
-  "  autocmd FileType notes    call textobj#sentence#init()
-  "  autocmd FileType help     call textobj#sentence#init()
-  "  autocmd FileType text     call textobj#sentence#init()
-  "augroup END
+  augroup textobj_sentence
+    au!
+    autocmd FileType markdown call textobj#sentence#init()
+    autocmd FileType notes    call textobj#sentence#init()
+    autocmd FileType help     call textobj#sentence#init()
+    autocmd FileType text     call textobj#sentence#init()
+  augroup END
 
-  "augroup pencil
-  "  autocmd!
-  "  autocmd FileType markdown call pencil#init()
-  "  autocmd FileType notes    call pencil#init()
-  "  autocmd FileType help     call pencil#init()
-  "  autocmd FileType text     call pencil#init()
-  "augroup END
+  augroup pencil
+    autocmd!
+    autocmd FileType markdown call pencil#init()
+    autocmd FileType notes    call pencil#init()
+    autocmd FileType help     call pencil#init()
+    autocmd FileType text     call pencil#init()
+  augroup END
 endfunc
 
-"func! s:goyo_enter() abort
-"  Limelight
-"  call color#tweak()
-"  silent !tmux set status off
-"  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-"  set noshowmode
-"  set noshowcmd
-"  set scrolloff=999
-"endfunction
-"func! s:goyo_leave() abort
-"  set scrolloff=5
-"  set showcmd
-"  set showmode
-"  Limelight
-"  call color#tweak()
-"  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-"  silent !tmux set status on
-"endfunction
+func! s:goyo_enter() abort
+  Limelight
+  call color#tweak()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+endfunction
+func! s:goyo_leave() abort
+  set scrolloff=5
+  set showcmd
+  set showmode
+  Limelight
+  call color#tweak()
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  silent !tmux set status on
+endfunction
 
 func! s:reload_tmux() abort
   redraw | echomsg '[tmux ➡️  vim] Sourced ' . expand('%:p') . '.' | redraw
@@ -119,5 +119,5 @@ func! s:update_directory() abort
   let l:dir = FindRootDirectory()
   call karma0#projects#enter_directory(l:dir)
   let g:test#project_root = l:dir
-  "exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
+  exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
 endfunc

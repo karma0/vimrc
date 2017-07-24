@@ -381,7 +381,7 @@ func! karma0#plugins#setup() abort
   call karma0#plugins#configure()
   call karma0#plugins#update_python()
   call karma0#plugins#define()
-  "call karma0#plugins#combind()
+  call karma0#plugins#combind()
   filetype plugin indent on
 endfunc
 

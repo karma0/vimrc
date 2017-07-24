@@ -5,11 +5,11 @@ scriptencoding utf-8
 
 
 func! karma0#abbreviations#setup() abort
-  iabbrev me_email karma0@gmail.com
-  iabbrev me_name Bobby Larson
-  iabbrev me_fname Bobby
-  iabbrev me_lname Larson
-  iabbrev me_site http://bobby.social
+  iabbrev myemail karma0@gmail.com
+  iabbrev myname Bobby Larson
+  iabbrev myfirst Bobby
+  iabbrev mylast Larson
+  iabbrev mysite http://bobby.social
   iabbrev fucntion function
   iabbrev sesssion session
   iabbrev existant existent
