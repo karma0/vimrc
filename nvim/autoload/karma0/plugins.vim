@@ -127,7 +127,9 @@ func! karma0#plugins#configure() abort
   let g:UltiSnipsEnableSnipMate = 1
   let g:UltiSnipsEditSplit = 'context'
   let g:UltiSnipsSnippetDirectories = [$HOME. '/.config/nvim/snippets']
-  let g:UltiSnipsExpandTrigger = '<c-j>'
+  "let g:UltiSnipsExpandTrigger = '<c-j>'
+  let g:UltiSnipsJumpForwardTrigger = '<c-y>'
+  let g:UltiSnipsJumpBackwardTrigger = '<c-o>'
   " }}}
 
   " {{{ vim-bookmarks
