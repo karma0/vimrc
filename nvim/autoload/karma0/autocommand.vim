@@ -119,5 +119,5 @@ func! s:update_directory() abort
   let l:dir = FindRootDirectory()
   call karma0#projects#enter_directory(l:dir)
   let g:test#project_root = l:dir
-  exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
+  "exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
 endfunc

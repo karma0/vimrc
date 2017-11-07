@@ -20,6 +20,8 @@ if has('termguicolors')
   set termguicolors
 endif
 
+let g:neomake_cpp_enabled_makers = []
+
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 

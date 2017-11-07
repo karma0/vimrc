@@ -26,12 +26,12 @@ endfunc
 
 func! karma0#projects#show_initial_view() abort
     Startify | TagbarOpen
-    NERDTreeTabsOpen
+    "NERDTreeTabsOpen
     Tagbar
     wincmd w
 endfunc
 
 func! karma0#projects#enter_directory(dir) abort
   exec('tchdir ' . a:dir)
-  exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
+  "exec(':NERDTreeFind | :NERDTreeCWD | :NERDTreeFocus')
 endfunc
