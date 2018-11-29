@@ -37,6 +37,7 @@ set errorbells
 set noruler
 set conceallevel=2 concealcursor=nvci
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+"set tabstop=4
 set textwidth=80 nowrap
 set updatetime=750
 
