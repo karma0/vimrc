@@ -56,7 +56,7 @@ func! karma0#plugins#configure() abort
 
   let g:plug_window = 'botright new | resize 5'
 
-  let g:rooter_use_lcd = 1
+  let g:rooter_cd_cmd = 'lcd'
   let g:rooter_silent_chdir = 0
   let g:rooter_resolve_links = 1
 
