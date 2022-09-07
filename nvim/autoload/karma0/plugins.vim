@@ -271,7 +271,8 @@ func! karma0#plugins#define() abort
   Plug 'tpope/vim-vinegar'
   " }}}
   " {{{ Language Support
-  Plug 'autozimu/LanguageClient-neovim' , { 'do': ':UpdateRemotePlugins' }
+  "Plug 'autozimu/LanguageClient-neovim' , { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim' , { 'do': 'bash install.sh' }
         \ | Plug 'ncm2/ncm2-racer'
         \ | Plug 'Shougo/neco-vim'
   Plug 'roxma/nvim-yarp'
@@ -294,7 +295,12 @@ func! karma0#plugins#define() abort
   Plug 'TyberiusPrime/ncm2-bufline'
   Plug 'ncm2/ncm2-cssomni'
   Plug 'ncm2/ncm2-tern'
-  Plug 'mhartington/nvim-typescript'
+  "Plug 'mhartington/nvim-typescript'
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'jparise/vim-graphql'
   Plug 'ncm2/ncm2-jedi'
   Plug 'ncm2/ncm2-pyclang'
   Plug 'ncm2/ncm2-d'
@@ -348,7 +354,7 @@ func! karma0#plugins#define() abort
   Plug 'machakann/vim-highlightedyank'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'radenling/vim-dispatch-neovim'
-  Plug 'xolox/vim-easytags'
+  "Plug 'xolox/vim-easytags'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-notes'
   Plug 'xolox/vim-session'
@@ -380,6 +386,7 @@ func! karma0#plugins#define() abort
   Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
   "Plug 'vimperator/vimperator.vim'
   Plug 'saltstack/salt-vim'
+  Plug 'github/copilot.vim'
   " }}}
   " {{{ Project Support
   Plug 'mattesgroeger/vim-bookmarks'
