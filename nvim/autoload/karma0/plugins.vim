@@ -1,13 +1,25 @@
 scriptencoding utf-8
 
+"let g:karma0 = {
+"      \ 'plugins': {
+"      \   'dir': expand('$HOME/.config/nvim/plugins'),
+"      \   'lock': '${HOME}/.config/nvim/locked-plugin-list.vim'
+"      \ },
+"      \ 'color': {
+"      \   'scheme': 'ayu',
+"      \   'airline_theme': 'ubaryd',
+"      \   'background': 'dark'
+"      \ }
+"      \ }
+
 let g:karma0 = {
       \ 'plugins': {
       \   'dir': expand('$HOME/.config/nvim/plugins'),
       \   'lock': '${HOME}/.config/nvim/locked-plugin-list.vim'
       \ },
       \ 'color': {
-      \   'scheme': 'ayu',
-      \   'airline_theme': 'ubaryd',
+      \   'scheme': 'gruvbox',
+      \   'airline_theme': 'gruvbox',
       \   'background': 'dark'
       \ }
       \ }
@@ -360,6 +372,7 @@ func! karma0#plugins#define() abort
   Plug 'xolox/vim-session'
   Plug 'xolox/vim-shell'
   Plug 'terryma/vim-multiple-cursors'
+  Plug 'morhetz/gruvbox'
   " }}}
   " {{{ Language Support
   Plug 'sheerun/vim-polyglot' " General language support.
